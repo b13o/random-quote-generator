@@ -1,4 +1,33 @@
+import { useEffect, useState } from "react";
+
+const BASE_URL = "https://b13o.github.io/tech-quotes-api";
+
+async function fetchRandomQuote() {
+  const id = Math.floor(Math.random() * 100) + 1;
+  const response = await fetch(
+    // "https://programming-quotesapi.vercel.app/api/random"
+    `${BASE_URL}/api/quotes/${id}`
+  );
+  return response.json();
+}
+
 function App() {
+  // 取得した名言のデータを変数で管理
+  const [quote, setQuote] = useState(null);
+
+  // コンポーネント描画時に動作する副作用
+  useEffect(() => {
+    let active = true;
+    fetchRandomQuote().then((quote) => {
+      if (active) {
+        setQuote(quote);
+      }
+    });
+    return () => {
+      active = false;
+    };
+  }, []);
+
   return (
     <div className="bg-gray-100 min-h-screen pt-16 pb-8 space-y-8">
       {/* Hero Section */}
@@ -34,13 +63,9 @@ function App() {
             💬
           </div>
 
-          <p className="text-center text-xl text-gray-200">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et vero
-            libero ut earum, totam ipsum, velit eos nostrum repudiandae labore
-            a? Odit saepe sit nulla rerum expedita iste. Laborum, eius!
-          </p>
+          <p className="text-center text-xl text-gray-200">{quote?.quote}</p>
 
-          <p className="text-gray-300 text-center">by Lorem ipsum</p>
+          <p className="text-gray-300 text-center">by {quote?.author}</p>
         </div>
       </div>
 
