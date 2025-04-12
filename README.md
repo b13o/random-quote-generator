@@ -1,12 +1,54 @@
-# React + Vite
+<img width="1440" alt="スクリーンショット 2024-10-11 1 33 37" src="https://github.com/user-attachments/assets/d4387202-fa29-436e-9ef9-4b679b3f99b0" />
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# ランダム名言ジェネレータ
 
-Currently, two official plugins are available:
+## 概要
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+このプロジェクトでは、ボタンをクリックするたびに、ランダムな名言を表示するアプリケーションを構築します。
+外部 API を活用し、プログラミングの世界の著名人による言葉を取得し、画面に表示します。
 
-## Expanding the ESLint configuration
+## 学習目標
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+React の基本的な Hook である、useState と useEffect を学習します。
+
+特に、useEffect フックを使ったデータフェッチと、その注意点・代替案について確認してください。
+
+### 推奨技術
+
+このプロジェクトの難易度と趣旨を踏まえて、以下の使用をお勧めします。
+
+- vite を用いた React 環境構築
+- Tailwind CSS を用いたスタイリング
+- API を利用したデータの取得と表示。
+- React の基本的な Hook である、useState と useEffect
+- GitHub Pages へのデプロイ
+
+---
+
+## 🎯 お題
+
+- 「ユーザーストーリー」を全て満たす、アプリを構築してください。
+- 必要に応じて、スクリーンショットやデモサイトの URL を、参照してください。
+- なお、スタイルは、あなた自身で独自にカスタマイズすることが可能です。
+
+### 必須機能
+
+1. **ランダムな名言の表示**:
+   - サイトアクセス時にランダムな名言とその著者名を表示する。
+2. **名言の更新**:
+   - ボタンをクリックすると、新しいランダムな名言を取得して表示する。
+
+### 追加情報
+
+今回使用する API は、「[**Programming Quotes API**](https://programming-quotesapi.vercel.app/)」です。
+
+- この API は、プログラミングに関連する名言とその著者を提供します。
+- 無料でパブリックに公開されており、アクセスキーなどは必要ありません。
+- MIT ライセンスの下で提供されているので、商用利用も含め、自由に使用することができますが、利用は自己責任です。
+- レート制限は、１時間あたり 100 リクエストまでです。
+
+## ユーザーストーリー
+
+- [ ] ユーザーがサイトにアクセスすると、ランダムな名言と著者名が表示される。
+- [ ] ユーザーが「**_Generate_**」ボタンをクリックすると、新しい名言と著者名が表示される。
+- [ ] アプリケーションがデプロイされており、誰でもアクセス可能である。
